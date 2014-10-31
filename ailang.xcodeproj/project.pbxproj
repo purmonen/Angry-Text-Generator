@@ -20,6 +20,10 @@
 		266BCC7C19F8191D00E74AFF /* ce22.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC7219F8191300E74AFF /* ce22.txt */; };
 		266BCC7D19F8191D00E74AFF /* cg19.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC7319F8191300E74AFF /* cg19.txt */; };
 		266BCC7E19F8191D00E74AFF /* ca02.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC7419F8191300E74AFF /* ca02.txt */; };
+		268191251A03E10D00AA67E9 /* angry.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 268191241A03E0DD00AA67E9 /* angry.txt */; };
+		268191291A03E34400AA67E9 /* rant2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 268191281A03E33100AA67E9 /* rant2.txt */; };
+		2682EAF51A028A4C006E28A8 /* WordPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682EAF41A028A4C006E28A8 /* WordPredictor.swift */; };
+		2682EAF71A028B26006E28A8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682EAF61A028B26006E28A8 /* extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +33,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				268191291A03E34400AA67E9 /* rant2.txt in CopyFiles */,
+				268191251A03E10D00AA67E9 /* angry.txt in CopyFiles */,
 				266BCC7519F8191D00E74AFF /* cn16.txt in CopyFiles */,
 				266BCC7619F8191D00E74AFF /* cp06.txt in CopyFiles */,
 				266BCC7719F8191D00E74AFF /* cr06.txt in CopyFiles */,
@@ -62,6 +68,13 @@
 		266BCC7319F8191300E74AFF /* cg19.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cg19.txt; sourceTree = "<group>"; };
 		266BCC7419F8191300E74AFF /* ca02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca02.txt; sourceTree = "<group>"; };
 		266BCC7F19F8466500E74AFF /* wedPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = wedPlayground.playground; sourceTree = "<group>"; };
+		268191221A03DD9000AA67E9 /* makecorpus.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = makecorpus.py; sourceTree = "<group>"; };
+		268191231A03DF1E00AA67E9 /* examplesai.txt */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text; path = examplesai.txt; sourceTree = "<group>"; };
+		268191241A03E0DD00AA67E9 /* angry.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = angry.txt; sourceTree = "<group>"; };
+		268191271A03E2FC00AA67E9 /* rant.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rant.txt; sourceTree = "<group>"; };
+		268191281A03E33100AA67E9 /* rant2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rant2.txt; sourceTree = "<group>"; };
+		2682EAF41A028A4C006E28A8 /* WordPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPredictor.swift; sourceTree = "<group>"; };
+		2682EAF61A028B26006E28A8 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +109,14 @@
 			isa = PBXGroup;
 			children = (
 				266BCC6019F7DB6200E74AFF /* main.swift */,
+				268191241A03E0DD00AA67E9 /* angry.txt */,
+				2682EAF41A028A4C006E28A8 /* WordPredictor.swift */,
+				2682EAF61A028B26006E28A8 /* extensions.swift */,
+				268191271A03E2FC00AA67E9 /* rant.txt */,
+				268191281A03E33100AA67E9 /* rant2.txt */,
+				268191221A03DD9000AA67E9 /* makecorpus.py */,
+				268191231A03DF1E00AA67E9 /* examplesai.txt */,
+				266BCC7219F8191300E74AFF /* ce22.txt */,
 				266BCC6B19F8191300E74AFF /* cn16.txt */,
 				266BCC6C19F8191300E74AFF /* cp06.txt */,
 				266BCC6D19F8191300E74AFF /* cr06.txt */,
@@ -103,7 +124,6 @@
 				266BCC6F19F8191300E74AFF /* ch05.txt */,
 				266BCC7019F8191300E74AFF /* ch21.txt */,
 				266BCC7119F8191300E74AFF /* cj27.txt */,
-				266BCC7219F8191300E74AFF /* ce22.txt */,
 				266BCC7319F8191300E74AFF /* cg19.txt */,
 				266BCC7419F8191300E74AFF /* ca02.txt */,
 				266BCC6719F7DC0800E74AFF /* sw.txt */,
@@ -168,7 +188,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2682EAF51A028A4C006E28A8 /* WordPredictor.swift in Sources */,
 				266BCC6119F7DB6200E74AFF /* main.swift in Sources */,
+				2682EAF71A028B26006E28A8 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +305,7 @@
 				266BCC6619F7DB6200E74AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

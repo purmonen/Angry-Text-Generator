@@ -1,0 +1,39 @@
+A project I'm currently doing for work involves a custom server-side component. Ordinarily I would reach straight for D and Vibe.d. (In fact, D and Vibe.d are already making development go very smoothly on a light-weight "not-a-blog" system I'm developing...at least in the rare cases I can actually spend any time on it...) Unfortunately, this project came with an unwavering pointy-hair decree that I must use either PHP or Python. (BTW, If you think you know who it was, you're probably wrong.)
+
+Naturally I didn't hesitate to choose "Anything but PHP".
+
+But, it's worth noting the big reason behind the "PHP or Python" limit was the usual false-dichotomy bullcrap about "getting shit done" that's frequently used by dynamic fans. About the only argument that made any sense at all was that a lot of people know PHP and Python and could pick up the codebase later (It's always nice to know you're coding your way towards expendability.)
+
+Whatever, fine. Python it is.
+
+So, long story short, I found this page which pointed me to some relevant libs, and I figured I'd try Flask first.
+
+I went to download Flask (BTW, if I see one more language or lib claiming on its homepage to be "fun!", I'm gonna kill someone). But Flask showed nothing but a Linux release. WTF? I thought Python was supposed to be at least vaguely cross-platform? Searched around and found some obscure corner of the net that happened to actually explain how to install it on Windows. Ok, so I installed the prerequisite PIP, I do the "pip install flask"...and the system couldn't find PIP. More digging...Oh great, back when I had to put the Python directory into my PATH manually, despite having used an actual Python installer, I was apparently supposed to also know to add the 'Scripts' subdirectory. Clear as mud.
+
+Fine, done. Try again...And I get some big useless "Traceback" vomit. (I swear, when trying to use Python "software", I get more "Traceback" bullshit than actual "Ok boss! Done!".) Buried in that garbage is some line of sourcecode involving a string literal mentioning something about needing a "PyFlakes". Ehh, what the hell, let's just try "pip install pyflakes". Nah, no dice, just more barf.
+
+Meh, whatever, fuck Flask for now, let's try Bottle. Apparently it's supposed to be low-bullshit anyway, so sounds good. Wow, this one actually installs. And the "hello world" source on their website works! Hot damn, we're in business.
+
+So I modify the hello world. And I look up how to change the content type, because I know I'm going to need to spit out binary data on this project. And...uhhh...the content type didn't fucking change. It's still spitting out 'text/html'. Errghh...So I blow nearly half an hour digging through the docs for something I may have missed, go back over my code...nothing. Try to find someplace to ask, find a buried link to a mailing list (I hate mailing lists), and start writing for help. Then, by pure chance, I happen to notice it:
+
+Do you see the problem? I mean, aside from the flawed idea of indent-scoping and the goofy underscore_naming_convention. Yea...Obviously "content_type" is a property of the response, not the request. Of course, Python couldn't have told me 'request' didn't have a member 'content_type' and ended the matter right then and there. No, it had to string me along, doing anything except let me know something was wrong.
+
+If this is a dynamic coder's idea of "getting shit done", then they can blow me.
+
+Oh, sure, you never make stupid mistakes like that, right? There's a term for programmers who don't make dumb mistakes: Goddamned LIARS.
+
+After fixing it to "response" we can still have some more fun with this:
+
+Still runs! Wrongly! Even though I'm damn certain the Bottle developers didn't put any "POOP_SHITS_FUCK" into their API.
+
+Why the fuck should any of that even compile? That's what I hate about these dynamic turds, they happily let you do completely nonsensical shit, just for the fuck it. "Oh, but this means you can stick random extra garbage into any object you want!" Gee, great. Just what I've never wanted.
+
+Here's another wonderful feature I never wanted:
+
+Holy hell, my content type is a fucking day and Python happily spits out the resulting gibberish. Gee, it's not a bug, it's a feature! (Hmm, happily doing the non-sensical? No wonder it's named after Monty Python[1].) "But what if you wanted to..." Lemme just stop you there. The day I want to do something like that is the day I want my head bashed in.
+
+"But it's just doing what you clearly told it to!" Great, I see we're already forgetting something about "programmers who don't make mistakes". Now, I don't like software that second-guesses me any more than anyone else, but when I fuck up (as we all do) and tell my computer to do something that doesn't even make sense, I expect it to tell me so, not use it as an excuse to run around fucking shit up. If I hand you a gun and say "Shoot the fribstitch", I expect you to say "What the fuck is a fribstitch?", not start blasting away hoping to hit it.
+
+So let's recap: Dynamic typing helps you "get shit done" by giving you the freedom to do useless nonsensical things, write to properties that don't even fucking exist, and generally do things that are either outright bugs or are convoluted enough to invite bugs. Then, instead of letting the compiler eliminate entire classes of these bugs, you're encouraged to take the time to write extra unittests to catch some of them instead of, you know, just "getting shit done".
+
+If I'm gonna "get shit done", then I expect my language to help me avoid bugs, not help me make them.
