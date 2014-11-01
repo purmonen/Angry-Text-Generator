@@ -8,11 +8,38 @@
 
 import Foundation
 
-public class WordPredictor {
+public class MultiGram {
     
-    private var nextWordDictionary: [String: String] = [String: String]()
-    private var nextProbabilites: [String: [String:Int]] = [String: [String:Int]]()
-    private var n: Int
+    let ngrams: [NGram]
+    
+    public init(corpus: String, n: Int) {
+        ngrams = Array(1...n).reverse().map { NGram(corpus: corpus, n: $0) }
+    }
+
+    public func nextWord(text: String) -> String? {
+        for ngram in ngrams {
+            if let nextWord = ngram.nextWord(text) {
+                return nextWord
+            }
+        }
+        return nil
+    }
+    
+    public func nextWord(text: String, nextWords: [String]) -> String? {
+        for ngram in ngrams {
+            if let nextWord = ngram.nextWord(text, nextWords: nextWords) {
+                return nextWord
+            }
+        }
+        return nil
+    }
+}
+
+public class NGram {
+    
+    var nextWordDictionary: [String: String] = [String: String]()
+    var nextProbabilites: [String: [String:Int]] = [String: [String:Int]]()
+    var n: Int
     
     public init(corpus: String, n: Int = 2) {
         self.n = n
@@ -56,9 +83,11 @@ public class WordPredictor {
         }
         return nextWord
     }
-    
-    public func nextWord(text: String) -> String? {
-        let key = keyFromText(text)!
+
+    public func nextWord(var text: String) -> String? {
+        text = text.trim()
+        if text.isEmpty { return nil }
+        let key = keyFromText(text) ?? ""
         return nextWordDictionary[key]
     }
     
@@ -70,7 +99,7 @@ public class WordPredictor {
         return "".fromWords(Array(words[words.count - n ..< words.count]))
     }
     
-    public func mostProbableNextWord(text: String, nextWords: [String]) -> String? {
+    public func nextWord(text: String, nextWords: [String]) -> String? {
         if keyFromText(text) == nil {
             return nil
         }

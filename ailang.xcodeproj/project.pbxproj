@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		263A83BA1A0533110083F76F /* bookcorp.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 263A83B91A0533070083F76F /* bookcorp.txt */; };
 		266BCC6119F7DB6200E74AFF /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266BCC6019F7DB6200E74AFF /* main.swift */; };
 		266BCC6919F7DCC600E74AFF /* sw.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC6719F7DC0800E74AFF /* sw.txt */; };
 		266BCC6A19F7DCC600E74AFF /* cl10.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC6819F7DC0800E74AFF /* cl10.txt */; };
@@ -22,7 +23,7 @@
 		266BCC7E19F8191D00E74AFF /* ca02.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 266BCC7419F8191300E74AFF /* ca02.txt */; };
 		268191251A03E10D00AA67E9 /* angry.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 268191241A03E0DD00AA67E9 /* angry.txt */; };
 		268191291A03E34400AA67E9 /* rant2.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = 268191281A03E33100AA67E9 /* rant2.txt */; };
-		2682EAF51A028A4C006E28A8 /* WordPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682EAF41A028A4C006E28A8 /* WordPredictor.swift */; };
+		2682EAF51A028A4C006E28A8 /* NGram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682EAF41A028A4C006E28A8 /* NGram.swift */; };
 		2682EAF71A028B26006E28A8 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2682EAF61A028B26006E28A8 /* extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				263A83BA1A0533110083F76F /* bookcorp.txt in CopyFiles */,
 				268191291A03E34400AA67E9 /* rant2.txt in CopyFiles */,
 				268191251A03E10D00AA67E9 /* angry.txt in CopyFiles */,
 				266BCC7519F8191D00E74AFF /* cn16.txt in CopyFiles */,
@@ -53,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		263A83B81A052BF70083F76F /* book.txt */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text; path = book.txt; sourceTree = "<group>"; };
+		263A83B91A0533070083F76F /* bookcorp.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bookcorp.txt; sourceTree = "<group>"; };
 		266BCC5D19F7DB6200E74AFF /* ailang */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ailang; sourceTree = BUILT_PRODUCTS_DIR; };
 		266BCC6019F7DB6200E74AFF /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		266BCC6719F7DC0800E74AFF /* sw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sw.txt; sourceTree = "<group>"; };
@@ -73,7 +77,7 @@
 		268191241A03E0DD00AA67E9 /* angry.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = angry.txt; sourceTree = "<group>"; };
 		268191271A03E2FC00AA67E9 /* rant.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rant.txt; sourceTree = "<group>"; };
 		268191281A03E33100AA67E9 /* rant2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rant2.txt; sourceTree = "<group>"; };
-		2682EAF41A028A4C006E28A8 /* WordPredictor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordPredictor.swift; sourceTree = "<group>"; };
+		2682EAF41A028A4C006E28A8 /* NGram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NGram.swift; sourceTree = "<group>"; };
 		2682EAF61A028B26006E28A8 /* extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,14 +113,16 @@
 			isa = PBXGroup;
 			children = (
 				266BCC6019F7DB6200E74AFF /* main.swift */,
-				268191241A03E0DD00AA67E9 /* angry.txt */,
-				2682EAF41A028A4C006E28A8 /* WordPredictor.swift */,
+				263A83B91A0533070083F76F /* bookcorp.txt */,
+				2682EAF41A028A4C006E28A8 /* NGram.swift */,
 				2682EAF61A028B26006E28A8 /* extensions.swift */,
 				268191271A03E2FC00AA67E9 /* rant.txt */,
 				268191281A03E33100AA67E9 /* rant2.txt */,
 				268191221A03DD9000AA67E9 /* makecorpus.py */,
 				268191231A03DF1E00AA67E9 /* examplesai.txt */,
+				268191241A03E0DD00AA67E9 /* angry.txt */,
 				266BCC7219F8191300E74AFF /* ce22.txt */,
+				263A83B81A052BF70083F76F /* book.txt */,
 				266BCC6B19F8191300E74AFF /* cn16.txt */,
 				266BCC6C19F8191300E74AFF /* cp06.txt */,
 				266BCC6D19F8191300E74AFF /* cr06.txt */,
@@ -188,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2682EAF51A028A4C006E28A8 /* WordPredictor.swift in Sources */,
+				2682EAF51A028A4C006E28A8 /* NGram.swift in Sources */,
 				266BCC6119F7DB6200E74AFF /* main.swift in Sources */,
 				2682EAF71A028B26006E28A8 /* extensions.swift in Sources */,
 			);
