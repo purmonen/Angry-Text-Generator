@@ -71,7 +71,6 @@
 		266BCC7219F8191300E74AFF /* ce22.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ce22.txt; sourceTree = "<group>"; };
 		266BCC7319F8191300E74AFF /* cg19.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cg19.txt; sourceTree = "<group>"; };
 		266BCC7419F8191300E74AFF /* ca02.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ca02.txt; sourceTree = "<group>"; };
-		266BCC7F19F8466500E74AFF /* wedPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = wedPlayground.playground; sourceTree = "<group>"; };
 		268191221A03DD9000AA67E9 /* makecorpus.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = makecorpus.py; sourceTree = "<group>"; };
 		268191231A03DF1E00AA67E9 /* examplesai.txt */ = {isa = PBXFileReference; fileEncoding = 7; lastKnownFileType = text; path = examplesai.txt; sourceTree = "<group>"; };
 		268191241A03E0DD00AA67E9 /* angry.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = angry.txt; sourceTree = "<group>"; };
@@ -95,7 +94,6 @@
 		266BCC5419F7DB6200E74AFF = {
 			isa = PBXGroup;
 			children = (
-				266BCC7F19F8466500E74AFF /* wedPlayground.playground */,
 				266BCC5F19F7DB6200E74AFF /* ailang */,
 				266BCC5E19F7DB6200E74AFF /* Products */,
 			);
@@ -113,10 +111,10 @@
 			isa = PBXGroup;
 			children = (
 				266BCC6019F7DB6200E74AFF /* main.swift */,
-				263A83B91A0533070083F76F /* bookcorp.txt */,
 				2682EAF41A028A4C006E28A8 /* NGram.swift */,
 				2682EAF61A028B26006E28A8 /* extensions.swift */,
 				268191271A03E2FC00AA67E9 /* rant.txt */,
+				263A83B91A0533070083F76F /* bookcorp.txt */,
 				268191281A03E33100AA67E9 /* rant2.txt */,
 				268191221A03DD9000AA67E9 /* makecorpus.py */,
 				268191231A03DF1E00AA67E9 /* examplesai.txt */,

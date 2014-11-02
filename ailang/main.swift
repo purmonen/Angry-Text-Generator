@@ -57,9 +57,22 @@ func readText(fileName: String) -> String {
     }).reduce("", { $0 + $1 + ". "})
 }
 
-let corpusFileNames = ["angry.txt", "cn16.txt"]
+let corpusFileNames = ["cn16.txt"]
 
-func angryTextNGram(reson: String, sentencesCount: Int) -> String {
+func randomAngryText(reason: String) -> String {
+    let sentences = [
+        "I hate you because you are",
+        "I can't stand that you are",
+        "It's making me annoyed that you are",
+        "You are pissing me off because you are",
+        "You are making me annoyed because you are",
+        "Please stop being",
+        "You are always",
+    ]
+    return sentences.randomElement() + " " + reason + "."
+}
+
+func angryTextNGram(reason: String, sentencesCount: Int) -> String {
     var corpus = ""
     for fileName in corpusFileNames {
         corpus += readText(fileName)
@@ -77,7 +90,7 @@ func angryTextNGram(reson: String, sentencesCount: Int) -> String {
         sentence += ". "
         text += sentence.capitalize()
     }
-    return text.stringByReplacingOccurrencesOfString(" ,", withString: ",", options: nil, range: nil)
+    return randomAngryText(reason) + " " + text.stringByReplacingOccurrencesOfString(" ,", withString: ",", options: nil, range: nil)
 }
 
 func angryText(reason: String, sentencesCount: Int) -> String {
@@ -103,22 +116,23 @@ func angryText(reason: String, sentencesCount: Int) -> String {
 //        "nn": [
 //            "motherfucker", "hell", "bitch", "retard", "idiot", "asshole",
 //            "maggot", "dogshit", "rhino", "dinosaur", "monkey"],
-//        "jj": ["angry", "mad", "crazy", "ugly", "stupid", "idiotic", "dumb", "retarded"],
+        "jj": ["angry", "mad", "crazy", "ugly", "stupid", "idiotic", "dumb", "retarded"],
 //        "np": ["paul"],
-        "jj": [reason]
+//        "jj": [reason]
 //        "ppo": ["you"]
     ]
 
     
-    var text = "I hate you because you are \(reason). "
+    
+    
+    var text = ""
     var underlyingText = ""
-    println("----")
+//    println("----")
 
     for i in 1...sentencesCount {
         let structure = sentenceStructures.filter({ $0.count >= 4 && $0.count <= 9 && !contains($0, "md") }).randomElement()
         var sentence = wordClass[structure[0]]!.randomElement() + " "
         underlyingText += sentenceStructureMap[structure.reduce("", combine: {$0 + $1})]!
-        println(structure)
         for wc in structure[1..<structure.count] {
             if wordClass[wc] == nil {
                 continue
@@ -139,21 +153,20 @@ func angryText(reason: String, sentencesCount: Int) -> String {
         sentence = sentence.capitalize().trim() + ". "
         text += sentence
     }
-    text += "So stop being \(reason)."
-    println("----")
-    println(underlyingText)
-    println("----")
-    return text.stringByReplacingOccurrencesOfString(" ,", withString: ",", options: nil, range: nil)
+//    println("----")
+//    println(underlyingText)
+//    println("----")
+    return randomAngryText(reason) + " " + text.stringByReplacingOccurrencesOfString(" ,", withString: ",", options: nil, range: nil)
 }
 
 
-let sentencesCount = 3
+let sentencesCount = 4
+let reason = "late"
 
-println("Angry NGram text")
-println(angryTextNGram("late", sentencesCount))
+println("NGram version")
+println(angryTextNGram(reason, sentencesCount))
 
 println()
-println()
 
-println("Angry improved text")
-println(angryText("late", sentencesCount))
+println("Hybrid version")
+println(angryText(reason, sentencesCount))
